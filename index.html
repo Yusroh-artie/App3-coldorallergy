@@ -17,8 +17,7 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
- 
+diagnosize allergy or cold 
 Known Issues:
 blah, blah, blah, blah
 
@@ -33,50 +32,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
-
-
-<script>
-        var allergy_count = 0; // Stores the number of 'allergy' answers
-        var cold_count = 0; // Stores the number of 'cold' answers
-
-
-        function allergyAdd(){
-            allergy_count = allergy_count + 1; // Adds 1 to allergy count when called
-		alert(allergy_count);
-
-        }
-
-        function coldAdd(){
-            cold_count = cold_count + 1; // Adds 1 to cold count when called
-        }
-        function getResults() {
-    // Calculate the percentage for each (count / total questions * 100)
-    var allergyPercent = (allergy_count / 4) * 100;
-    var coldPercent = (cold_count / 4) * 100;
-
-    // Capture the paragraph element with the ID 'results' [cite: 325]
-    var resultText = document.getElementById("results");
-
-    // Update the HTML content to show the final probabilities [cite: 327]
-    resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + 
-                           "<br> Probability it is a cold = " + coldPercent + "%";
-}
-function getResults() {
-    // Calculate the percentage for each (count / total questions * 100)
-    var allergyPercent = (allergy_count / 4) * 100;
-    var coldPercent = (cold_count / 4) * 100;
-
-    // Capture the paragraph element with the ID 'results' [cite: 325]
-    var resultText = document.getElementById("results");
-
-    // Update the HTML content to show the final probabilities [cite: 327]
-    resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + 
-                           "<br> Probability it is a cold = " + coldPercent + "%";
-}
-  </script>
-
-
-
 <style>	
 .body {
      margin: 0em;
@@ -98,8 +53,31 @@ function getResults() {
     z-index: 1;
 }
 </style>
+	
+<script>
+        var allergy_count = 0; // This Stores the number of 'allergy' answers
+        var cold_count = 0; // Stores the number of 'cold' answers
+	
+        function allergyAdd(){
+            allergy_count++; // Adds 1 to allergy count when called
+        }
+
+        function coldAdd(){
+           cold_count ++; // Adds 1 to cold count when called
+        }
+        function getResults() {
+    // Calculate the percentage for each (count / total questions * 100)
+		            var totalQuestions = 4;
+			        var allergyPercent = (allergy_count / 4) * 100;
+			        var coldPercent = (cold_count / 4) * 100;
+    var resultText = document.getElementById("results");
+    resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + 
+                           "<br> Probability it is a cold = " + coldPercent + "%";
+}
+  </script>
 
 <body>
+	
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
 </div>
@@ -164,6 +142,8 @@ function getResults() {
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
+<footer class="w3-bottom w3-container w3-flat-carrot">
+ <p>DIY Diagnostics Demo</p>
 </footer>
 
 </body>
