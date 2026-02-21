@@ -76,78 +76,81 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
   </script>
 
-<body>
-	
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+body>
+
+<!-- ================= HEADER ================= -->
+<header class="w3-container w3-flat-carrot">
+    <h1>Cold or Allergy Diagnostic App</h1>
+</header>
+
+<!-- ================= START PAGE ================= -->
+<div class="w3-container">
+    <p>Click below to begin your symptom check.</p>
+    <a href="#one" class="w3-btn w3-black">Start</a>
 </div>
-	
-<div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-</div>
-	
+
+<!-- ================= QUESTION 1 ================= -->
 <div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
-	</div>
-	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?.</p>    
-    	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
-        <a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-    </div>
+    <h2>Are your eyes watery or itchy?</h2>
+    <a href="#two" onclick="allergyAdd();" class="w3-btn w3-green">Yes</a>
+    <a href="#two" onclick="coldAdd();" class="w3-btn w3-red">No</a>
 </div>
 
+<!-- ================= QUESTION 2 ================= -->
 <div class="page" id="two">
-        <div class="w3-container w3-flat-carrot">
-            <h1>Question 2</h1>
-        </div>
-        <div class="w3-container">
-            <p>Do you have a fever?</p>
-            <a href="#three" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
-            <a href="#three" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
-        </div>
-    </div>
-
-    </div> </div> <div class="page" id="three">
-    <div class="w3-container w3-flat-carrot">
-        <h1>Question 3</h1>
-    </div>
-    <div id="content" class="w3-container">
-        <p>Do you have a sore throat?</p>
-        <a href="#four" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
-        <a href="#four" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
-    </div>
+    <h2>Do you have a fever?</h2>
+    <a href="#three" onclick="coldAdd();" class="w3-btn w3-green">Yes</a>
+    <a href="#three" onclick="allergyAdd();" class="w3-btn w3-red">No</a>
 </div>
 
-    <div class="page" id="four">
-        <div class="w3-container w3-flat-carrot">
-            <h1>Question 4</h1>
-        </div>
-        <div class="w3-container">
-            <p>Are your symptoms seasonal or chronic?</p>
-            <a href="#results_page" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
-            <a href="#results_page" onclick="coldAdd();" class="w3-btn w3-black">No</a>
-        </div>
-    </div>
+<!-- ================= QUESTION 3 ================= -->
+<div class="page" id="three">
+    <h2>Do you have a sore throat?</h2>
+    <a href="#four" onclick="coldAdd();" class="w3-btn w3-green">Yes</a>
+    <a href="#four" onclick="allergyAdd();" class="w3-btn w3-red">No</a>
+</div>
 
-    <div class="page" id="results_page">
-        <div class="w3-container w3-flat-carrot">
-            <h1>Analysis Results</h1>
-        </div>
-        <div class="w3-container">
-            <a onclick="getResults();" class="w3-btn w3-black">View My Results</a>
-            <p id="results"></p>
-        </div>
-    </div>
+<!-- ================= QUESTION 4 ================= -->
+<div class="page" id="four">
+    <h2>Are your symptoms seasonal or chronic?</h2>
+    <a href="#five" onclick="allergyAdd();" class="w3-btn w3-green">Yes</a>
+    <a href="#five" onclick="coldAdd();" class="w3-btn w3-red">No</a>
+</div>
 
-    <footer class="w3-bottom w3-container w3-flat-carrot">
-        <p>DIY Diagnostics Demo</p>
-    </footer>
+<!-- ================= NEW ALLERGY QUESTION ================= -->
+<div class="page" id="five">
+    <h2>Do your symptoms improve when you stay indoors?</h2>
+    <!-- Allergy symptoms often improve indoors -->
+    <a href="#six" onclick="allergyAdd();" class="w3-btn w3-green">Yes</a>
+    <a href="#six" onclick="coldAdd();" class="w3-btn w3-red">No</a>
+</div>
+
+<!-- ================= NEW COLD QUESTION ================= -->
+<div class="page" id="six">
+    <h2>Do you have body aches?</h2>
+    <!-- Body aches are more common with colds -->
+    <a href="#resultsPage" onclick="coldAdd();" class="w3-btn w3-green">Yes</a>
+    <a href="#resultsPage" onclick="allergyAdd();" class="w3-btn w3-red">No</a>
+</div>
+
+<!-- ================= RESULTS PAGE ================= -->
+<div class="page" id="resultsPage">
+    <h2>Your Results</h2>
+
+    <!-- Button runs calculation function -->
+    <a href="#resultsPage" onclick="showResults();" class="w3-btn w3-blue">
+        Calculate Results
+    </a>
+
+    <!-- This paragraph will be filled using JavaScript -->
+    <p id="results"></p>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+    <p>DIY Diagnostics App – Not Medical Advice</p>
+</footer>
 
 </body>
-</html>>
-
-
+</html>
