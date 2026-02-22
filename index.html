@@ -17,10 +17,12 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-diagnosize allergy or cold 
-Known Issues:
-blah, blah, blah, blah
-
+survey-assisted diagnostic tool designed to help users differentiate between common cold symptoms and seasonal allergies. 
+It uses JavaScript variables to track user responses to specific symptom-based questions and calculates a probability percentage 
+for each condition at the end.
+Known issues:
+	Currently, the application logic assumes a 50/50 probability weight for each question and does not account for overlapping symptoms 
+	like a cough, which can occur in both conditions.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -113,6 +115,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<!--QUESTION 2-->
 <div class="page" id="two">
 	<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Question 2</h1>
+	</div>
 	<div class="w3-container w3-flat-carrot">
     </p>Do you have a fever?</p>
     <a href="#three" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
@@ -121,17 +125,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<!--QUESTION 3-->
 <div class="page" id="three">
 	<div id="header" class="w3-container w3-flat-carrot">
-    <div id="content" class="w3-container">
+		<h1>Question 3</h1>
+	</div>
+	<div class="w3-container w3-flat-carrot">
     <p>Do you have a sore throat?</p>
     <a href="#four" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
     <a href="#four" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 </div>
     <!--QUESTION 4-->
-		<div class="page" id="four">
+<div class="page" id="four">
 		<div id="header" class="w3-container w3-flat-carrot">
-        <div class="w3-container w3-flat-carrot">
-        <h1>Question 4</h1>
+		<h1>Question 4</h1>
     </div>
+        <div class="w3-container w3-flat-carrot">
     <div id="content" class="w3-container">
         <p>Are your symptoms seasonal or chronic?</p>
         <a href="five" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
